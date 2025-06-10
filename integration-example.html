@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garda Racing Chat Widget - Integration Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .demo-content {
+            line-height: 1.6;
+            color: #666;
+        }
+        .integration-code {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Garda Racing Yacht Club</h1>
+        <div class="demo-content">
+            <p>This is an example of how to integrate the Garda Racing Chat Widget into any website.</p>
+            
+            <h3>Integration Steps:</h3>
+            <ol>
+                <li>Include React and ReactDOM (if not already included)</li>
+                <li>Include the widget CSS and JS files</li>
+                <li>Configure and initialize the widget</li>
+            </ol>
+
+            <h3>Required Scripts:</h3>
+            <div class="integration-code">
+&lt;!-- React (if not already included) --&gt;
+&lt;script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"&gt;&lt;/script&gt;
+&lt;script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Garda Racing Chat Widget --&gt;
+&lt;link rel="stylesheet" href="./dist/style.css"&gt;
+&lt;script src="./dist/garda-chat-widget.umd.js"&gt;&lt;/script&gt;
+            </div>
+
+            <h3>Configuration:</h3>
+            <div class="integration-code">
+&lt;script&gt;
+// Configure the widget before it loads
+window.gardaChatWidgetConfig = {
+    position: 'bottom-right', // or 'bottom-left'
+    theme: 'light', // or 'dark'
+    primaryColor: '#0066cc',
+    supabaseUrl: 'YOUR_SUPABASE_URL',
+    supabaseAnonKey: 'YOUR_SUPABASE_ANON_KEY'
+};
+
+// Or initialize manually after page load
+document.addEventListener('DOMContentLoaded', function() {
+    window.GardaRacingChatWidget.init({
+        position: 'bottom-right',
+        theme: 'light',
+        primaryColor: '#0066cc'
+    });
+});
+&lt;/script&gt;
+            </div>
+
+            <p><strong>The chat widget should appear in the bottom-right corner of this page!</strong></p>
+        </div>
+    </div>
+
+    <!-- React Dependencies -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Widget Configuration -->
+    <script>
+        window.gardaChatWidgetConfig = {
+            position: 'bottom-right',
+            theme: 'light',
+            primaryColor: '#0066cc',
+            supabaseUrl: 'https://guqbeodhvhpriokvbqhh.supabase.co',
+            supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1cWJlb2Rodmhwcmlva3ZicWhoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxMjM0NTksImV4cCI6MjA2NDY5OTQ1OX0.cX1rt9Kcc9XXA2l0Ij2O_6W-PT1NamIc_9f4CGFdeUc'
+        };
+    </script>
+    
+    <!-- Load the widget (this would be your built files) -->
+    <script>
+        // For demo purposes, we'll load from the built files
+        // In production, you'd host these files on your CDN
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './dist/style.css';
+        document.head.appendChild(link);
+        
+        const script = document.createElement('script');
+        script.src = './dist/garda-chat-widget.umd.js';
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>
